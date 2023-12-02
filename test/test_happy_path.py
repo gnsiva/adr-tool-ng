@@ -2,7 +2,10 @@ import os
 from datetime import datetime
 from pathlib import Path
 from typing import Generator
-from unittest.mock import Mock, patch
+from unittest.mock import (
+    Mock,
+    patch,
+)
 
 import pytest
 from typer.testing import CliRunner
@@ -29,7 +32,7 @@ def test_data_dir() -> Path:
 @pytest.fixture
 def mock_datetime_utcnow() -> Generator[Mock, None, None]:
     """Set the date for when the test runs."""
-    with patch("adr.adr.datetime") as mock_datetime:
+    with patch("adr.utils.datetime") as mock_datetime:
         mock_datetime.now.return_value = datetime(2013, 12, 1, 12)
         yield mock_datetime
 

@@ -51,7 +51,7 @@ def get_next_adr_number() -> int:
 
 def backup_file(filename: str) -> None:
     """Create a copy of the current state of the file, before destructive actions."""
-    now = int(datetime.utcnow().timestamp())
+    now = int(datetime.now().timestamp())
     os.makedirs(".adr-backup", exist_ok=True)
     shutil.copy(filename, f".adr-backup/{filename}.{now}")
 

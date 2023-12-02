@@ -10,3 +10,7 @@ install: ## Install ADR to /usr/bin  (run as root)
 	rm -f /usr/bin/adr
 	cp dist/adr /usr/bin/
 
+.PHONY: test
+test: ## Run tests with pytest
+	pytest test
+

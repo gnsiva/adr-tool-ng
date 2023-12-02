@@ -90,5 +90,3 @@ def test_update_status__bullet_list_statuses_missing() -> None:
     with pytest.raises(click.exceptions.Exit) as e:
         update_status(lines=lines, status=Status.Proposed)
     assert e.value.exit_code == 42
-
-

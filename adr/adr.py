@@ -3,8 +3,8 @@ import os
 import typer
 
 from adr.markdown_editing import (
-    update_status,
     insert_adr_number,
+    update_status,
 )
 from adr.utils import (
     Status,

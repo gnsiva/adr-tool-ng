@@ -1,0 +1,6 @@
+venv
+.adr-backup
+build
+dist
+adr.spec
+

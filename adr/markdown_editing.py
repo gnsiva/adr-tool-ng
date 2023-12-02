@@ -57,4 +57,3 @@ def insert_adr_number(lines: list[str], adr_number: int) -> list[str]:
         raise typer.Exit(42)
 
     return lines
-

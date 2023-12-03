@@ -1,8 +1,7 @@
+
 name: Run Python Tests
 
-# temporarily disabled
-on:
-  workflow_dispatch:
+on: [pull_request]
 
 jobs:
   test:

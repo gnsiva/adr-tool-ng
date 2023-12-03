@@ -1,8 +1,6 @@
 name: Python Code Quality Checks
 
-# temporarily disabled
-on:
-  workflow_dispatch:
+on: [pull_request]
 
 jobs:
   lint:

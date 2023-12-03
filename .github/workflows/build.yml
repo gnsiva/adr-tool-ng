@@ -27,7 +27,7 @@ jobs:
     - name: Assert and Open Release Notes
       id: release_notes
       run: |
-        RELEASE_NOTES_FILE="docs/releases/${GITHUB_REF#refs/tags/}.md"
+        RELEASE_NOTES_FILE="docs/release-notes/${GITHUB_REF#refs/tags/}.md"
         if [ ! -f "$RELEASE_NOTES_FILE" ]; then
           echo "Release notes $RELEASE_NOTES_FILE not found."
           exit 1

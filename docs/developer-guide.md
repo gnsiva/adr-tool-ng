@@ -23,9 +23,15 @@ Make sure to be in the virtual environment first.
 pip install -r requirements.txt -r requirements-test.txt
 ```
 
-### Create and install the executable
+### Test the code, create and install the executable
 
 ```bash
+# see available make entries 
+make
+
+# run the tests
+make test
+
 # create the executable
 make build
 

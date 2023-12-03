@@ -23,8 +23,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
-    - name: Assert and Open Release Notes
+    - name: Assert Tag is on Main Branch
+      run: |
+        TAG_COMMIT=$(git rev-list -n 1 ${{ github.ref }})
+        MASTER_COMMIT=$(git rev-list -n 1 origin/master)
+        if [ "$TAG_COMMIT" != "$MASTER_COMMIT" ]; then
+          echo "Tag is not on master branch. Stopping workflow."
+          exit 1
+        fi
+
+    - name: Assert Release Notes Present
       id: release_notes
       run: |
         RELEASE_NOTES_FILE="docs/release-notes/${GITHUB_REF#refs/tags/}.md"

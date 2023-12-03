@@ -24,6 +24,16 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: Assert and Open Release Notes
+      id: release_notes
+      run: |
+        RELEASE_NOTES_FILE="docs/releases/${GITHUB_REF#refs/tags/}.md"
+        if [ ! -f "$RELEASE_NOTES_FILE" ]; then
+          echo "Release notes $RELEASE_NOTES_FILE not found."
+          exit 1
+        fi
+        echo "RELEASE_NOTES=$(cat $RELEASE_NOTES_FILE)" >> $GITHUB_ENV
+
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
@@ -53,6 +63,7 @@ jobs:
       with:
         files: |
           ./dist/${{ env.ASSET_NAME }}
+        body: ${{ env.RELEASE_NOTES }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   

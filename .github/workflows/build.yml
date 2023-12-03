@@ -13,15 +13,15 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: ['ubuntu-22.04', macos-12, windows-2022]
         python-version: ['3.11']
         include:
-          - os: windows-latest
-            executable_extension: .exe
-          - os: ubuntu-latest
-            executable_extension: ''
-          - os: macos-latest
-            executable_extension: ''
+          - os: windows-2022
+            executable_extension: -windows-2022.exe
+          - os: 'ubuntu-22.04'
+            executable_extension: -linux
+          - os: macos-12
+            executable_extension: -macos
 
     steps:
     - uses: actions/checkout@v3

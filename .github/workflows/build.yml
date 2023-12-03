@@ -42,7 +42,7 @@ jobs:
 
     - name: Tar up executable and announch filename
       run: |
-        ASSET_NAME=adr${{ matrix.os }}.tar.gz
+        ASSET_NAME=adr-${{ matrix.os }}.tar.gz
         cd dist
         tar -czvf $ASSET_NAME adr
         echo "ASSET_NAME=$ASSET_NAME" >> $GITHUB_ENV

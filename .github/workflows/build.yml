@@ -40,8 +40,11 @@ jobs:
     - name: Build Executable
       run: pyinstaller --onefile adr/adr.py
 
-    - name: Determine Executable Name
-      run: echo "EXECUTABLE_NAME=adr${{ matrix.executable_extension }}" >> $GITHUB_ENV
+    - name: Rename executable and announce
+      run: |
+        EXECUTABLE_NAME=adr${{ matrix.executable_extension }}
+        cp ./dist/adr ./dist/$EXECUTABLE_NAME
+        echo "EXECUTABLE_NAME=$EXECUTABLE_NAME" >> $GITHUB_ENV
 
     - name: Release
       uses: softprops/action-gh-release@v1

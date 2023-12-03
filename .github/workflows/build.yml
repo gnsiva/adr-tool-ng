@@ -13,11 +13,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: ['ubuntu-22.04', macos-12, windows-2022]
+        os: ['ubuntu-22.04', macos-12]
         python-version: ['3.11']
         include:
-          - os: windows-2022
-            executable_extension: -windows-2022.exe
           - os: 'ubuntu-22.04'
             executable_extension: -linux
           - os: macos-12

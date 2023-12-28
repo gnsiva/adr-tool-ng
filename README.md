@@ -7,6 +7,9 @@
 * Untar it
 * Add the executable to somewhere where it will be picked up (e.g. `sudo cp adr /usr/bin/adr`)
 
+**Note** the mac performance is not great due to the way the executable is created, though it still works correctly. 
+This is a known issue with PyInstaller (e.g. [here](https://github.com/pyinstaller/pyinstaller/issues/6309)).
+
 ### Usage
 
 ```bash

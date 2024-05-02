@@ -9,5 +9,7 @@
 
 ## Decision
 
+## Rationale
+
 ## Consequences
 

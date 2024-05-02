@@ -8,5 +8,7 @@
 
 ## Decision
 
+## Rationale
+
 ## Consequences
 

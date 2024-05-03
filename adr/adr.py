@@ -25,6 +25,8 @@ template = """\
 
 ## Decision
 
+## Rationale
+
 ## Consequences
 
 """
